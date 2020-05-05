@@ -13,6 +13,9 @@ import { AppRoutingModule } from './app-routing.module';
 
 import firebaseConfig from './firebase';
 import {AngularFireModule} from '@angular/fire';
+import { IonicStorageModule } from '@ionic/storage';
+import { HttpClientModule } from '@angular/common/http';
+import { Network } from '@ionic-native/network/ngx';
 //import { environment } from 'src/environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 
@@ -24,7 +27,9 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    IonicStorageModule.forRoot(),
+    HttpClientModule,
   ],
   providers: [
     StatusBar,
