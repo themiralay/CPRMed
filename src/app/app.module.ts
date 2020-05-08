@@ -15,10 +15,10 @@ import firebaseConfig from './firebase';
 import {AngularFireModule} from '@angular/fire';
 import { IonicStorageModule } from '@ionic/storage';
 import { HttpClientModule } from '@angular/common/http';
-import { Network } from '@ionic-native/network/ngx';
 //import { environment } from 'src/environments/environment';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -30,6 +30,8 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
     AngularFireAuthModule,
     IonicStorageModule.forRoot(),
     HttpClientModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [
     StatusBar,

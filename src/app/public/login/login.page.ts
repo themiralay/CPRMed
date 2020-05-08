@@ -32,7 +32,7 @@ export class LoginPage implements OnInit {
     try{
       const res = await this.afAuth.signInWithEmailAndPassword(username+'@cprmed.com',password)
       if(res){
-          this.router.navigate(['home']);
+          this.router.navigate(['dashboard']);
           this.presentToast("Kullanıcı Başarıyla Giriş Yaptı");
         } else {
           this.presentToast("Giriş yapılamadı")
