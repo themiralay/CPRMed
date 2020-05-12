@@ -1,9 +1,37 @@
+
 <ion-header>
   <ion-toolbar>
     <ion-title>dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-list>
 
+    <ion-item>
+    <ion-label position="floating">Öğrenci Adı</ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+    <ion-label position="floating">Öğrenci Soyadı </ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+    <ion-label position="floating">Öğrenci Numarası </ion-label>
+    <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>  
+    
+  </ion-list>
+  <div >
+ </div>
+ <ion-button fill="solid" expand="block" color="success" (click)="simulationStart()">SIMULASYONU BAŞLAT</ion-button>
+  <ion-button fill="solid" expand="block" color="danger" (click)="simulationStop()">SIMULASYONU DURDUR</ion-button>
+  
+    {{ totalWeight | async }} = gram Basıyorsunuz. <BR>
+  
+  {{ highPressed | async }} = 50kg dan yüksek basıldı <BR>
+    {{ lowPressed | async }} = 30 kg dan düşük basıldı <BR>
+    {{ truePressed | async }} = DOĞRU BASILDI <BR>
 </ion-content>
