@@ -7,17 +7,6 @@
 
 <ion-content padding>
   <ion-list>
-
-    <ion-item>
-    <ion-label position="floating">Öğrenci Adı</ion-label>
-    <ion-input type="text" [(ngModel)]="username"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-    <ion-label position="floating">Öğrenci Soyadı </ion-label>
-    <ion-input type="text" [(ngModel)]="username"></ion-input>
-    </ion-item>
-
     <ion-item>
     <ion-label position="floating">Öğrenci Numarası </ion-label>
     <ion-input type="text" [(ngModel)]="username"></ion-input>
@@ -27,11 +16,22 @@
   <div >
  </div>
  <ion-button fill="solid" expand="block" color="success" (click)="simulationStart()">SIMULASYONU BAŞLAT</ion-button>
+ <ion-button fill="solid" expand="block" color="success" (click)="filechooser()" expand="full">dosya</ion-button>
   <ion-button fill="solid" expand="block" color="danger" (click)="simulationStop()">SIMULASYONU DURDUR</ion-button>
+    {{mypath}}
+    {{ totalWeight }} = gram Basıyorsunuz. <BR>
   
-    {{ totalWeight | async }} = gram Basıyorsunuz. <BR>
-  
-  {{ highPressed | async }} = 50kg dan yüksek basıldı <BR>
-    {{ lowPressed | async }} = 30 kg dan düşük basıldı <BR>
-    {{ truePressed | async }} = DOĞRU BASILDI <BR>
+  {{ highPressed }} = 50kg dan yüksek basıldı <BR>
+    {{ lowPressed}} = 30 kg dan düşük basıldı <BR>
+    {{ truePressed }} = DOĞRU BASILDI <BR>
+      <table border="1" class="data-table">
+        <tr>
+          <td *ngFor="let header of headerRow" text-center><b>{{ header }}</b></td>
+        </tr>
+        <tr *ngFor="let row of csvData; let i = index">
+          <td *ngFor="let data of row; let j = index; trackBy: trackByFn" class="data-col ">
+            <ion-input type="text" [(ngModel)]="csvData[i][j]"></ion-input>
+          </td>
+        </tr>
+      </table>
 </ion-content>

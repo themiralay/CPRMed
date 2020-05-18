@@ -19,6 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import {FileChooser} from '@ionic-native/file-chooser/ngx';
+import {FilePath} from '@ionic-native/file-path/ngx';
+import { PapaParseModule } from 'ngx-papaparse';
+import { File } from '@ionic-native/file/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -31,12 +36,16 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     IonicStorageModule.forRoot(),
     HttpClientModule,
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    PapaParseModule,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    FilePath,
+    File,
+    FileChooser
   ],
   bootstrap: [AppComponent]
 })
