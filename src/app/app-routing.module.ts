@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'dashboard',
     loadChildren: () => import('./members/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
+  {
+    path: '',
+    loadChildren: () => import('./members/dashboard-tabs/dashboard-tabs.module').then( m => m.DashboardTabsPageModule)
+  },
+  {
+    path: 'user-login',
+    loadChildren: () => import('./public/user-login/user-login.module').then( m => m.UserLoginPageModule)
+  },
 ];
 
 @NgModule({

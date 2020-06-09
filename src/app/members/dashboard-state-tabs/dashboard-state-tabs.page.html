@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Simulator Ekranı</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="mountAlign">
+    <ion-label small-heading>
+      Lütfen Öğrenci Seçiniz: <br><br>
+    </ion-label>
+
+    <ion-select [compareWith]="compareWith" (ionChange)="onSelectChange($event)">
+      <ion-select-option  *ngFor="let row of csvData" value="{{row[0]}}">{{row[3]  + ' ' + row[4]}}</ion-select-option>
+    </ion-select><br><br>
+
+    <ion-button fill="outline" expand="block" color="success" (click)="simulationStart()">CPR BAŞLAT</ion-button>
+
+    {{ weight }} = gram Basıyorsunuz. <br><br>
+    {{weightCounter}} Tane veri okundu <br><br>
+    {{ highPressed }} = 50kg dan yüksek basıldı <br><br>
+    {{ lowPressed}} = 30 kg dan düşük basıldı <br><br>
+    {{ truePressed }} = DOĞRU BASILDI <br><br>
+  </div>
+</ion-content>

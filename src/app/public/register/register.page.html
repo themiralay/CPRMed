@@ -1,28 +1,39 @@
-<ion-header>
-	<ion-toolbar>
-	  <ion-title>Kayıt ol</ion-title>
-	</ion-toolbar>
-  </ion-header>
-  
-  <ion-content padding>
-	  <ion-list>
-  
-		  <ion-item>
-			<ion-label position="floating">E posta </ion-label>
-			<ion-input type="text" [(ngModel)]="username"></ion-input>
-		  </ion-item>
-		
-		  <ion-item>
-			<ion-label position="floating">Şifre</ion-label>
-			<ion-input type="password" [(ngModel)]="password"></ion-input>
-		  </ion-item>
+<ion-header no-border>
+	<div class="login-header ion-padding">
+		<img class="logo.img" src="assets/img/cprFoto.png">
+	</div>
+</ion-header>
 
-		  <ion-item>
-			<ion-label position="floating">Şifre tekrar</ion-label>
-      <ion-input type="password" [(ngModel)]="confirmPassword"></ion-input>
-		  </ion-item>
-		
-		</ion-list>
-  
-		<ion-button fill="solid" expand="block" color="danger" (click)="register()">KAYIT OL</ion-button>
-  </ion-content>
+<ion-content>
+	<div class="center">
+		<div heading-column-lr>
+			<h1 big-heading>KAYIT OL</h1>
+			<h2 small-heading>KULLANICI KAYIT</h2>
+		</div>
+		<br>
+		<ion-label >
+		</ion-label>
+		<ion-item transparent>
+			<img icon-small src="assets/img/user.png"/>
+			<ion-input [(ngModel)]="username" placeholder="   E-MAIL" type="text"></ion-input>
+		</ion-item>
+		<ion-item transparent>
+			<img icon-small src="../../../assets/img/password.png"/>
+			<ion-input [(ngModel)]="password" placeholder="   ŞİFRE" type="password"></ion-input>
+		</ion-item>
+		<ion-item transparent>
+			<img icon-small src="../../../assets/img/key.png"/>
+			<ion-input [(ngModel)]="confirmPassword" placeholder="  ŞİFRE DOĞRULA" type="password"></ion-input>
+		</ion-item>
+		<div linespace></div>
+		<ion-button color="danger" class="ion-button-class" shape="round" fill="solid" size="large" expand="block" (click)="LoginOTP">
+			KAYIT OL
+		</ion-button>
+		<ion-label class="ion-text-center">
+			Hesabınız var mı?
+			<span class="link-button" (click)="routeLogin()">
+                GİRİŞ YAP
+          </span>
+		</ion-label>
+	</div>
+</ion-content>

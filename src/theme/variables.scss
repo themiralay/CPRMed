@@ -230,3 +230,112 @@
     --color: white;
   }
 }
+
+.center{
+  position: absolute;
+  left: 50%;
+  top:40%;
+  -webkit-transform: translate(-49%,-49%);
+  transform: translate(-49%,-40%);
+  width: 90%;
+}
+
+.mountAlign{
+  position: absolute;
+  top:10%;
+  left:10%;
+  width: 85%;
+}
+.login-header{
+  background: var(--ion-color-danger-tint);
+}
+.login-header{
+  position: relative;
+  background: var(--ion-color-danger-tint);
+  border-radius: 0em;
+}
+.login-header:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left:15%;
+  width: 0;
+  height: 0;
+  border: 28px solid transparent;
+  border-top-color: var(--ion-color-danger-tint);
+  border-bottom: 0;
+  margin-left: -15px;
+  margin-bottom: -15px;
+}
+.logo\.img{
+  display: block;
+  width:200px;
+  margin:0 auto;
+  text-align:center;
+}
+[heading-column-lr]{
+  display:flex;
+  -ms-flex-align: center;
+  align-items: center;
+}
+[big-heading]{
+  font-family: "Heebo-Bold" !important;
+  font-size: 30px !important;
+  color:var(--theme-black);
+}
+[small-heading]{
+  font-family: "Heebo-Regulars" !important;
+  margin-left: auto;
+  padding-right: 40px;
+  font-size: 15px;
+}
+ion-label{
+  color : #000;
+  opacity: .8;
+  font-size: 13px;
+  display: block;
+}
+ion-content{
+  --background:#fafafa;
+}
+[transparent]{
+  --background: transparent;
+}
+ion-input{
+  --color:#000;
+  --padding-bottom: 15px;
+  --padding-top:15px;
+  --padding-start:5px;
+  font-size: 15px;
+  text-indent: 1px;
+  padding-left: 10px !important;
+}
+[icon-small]{
+  width:30px;
+}
+ion-item{
+  --highlight-color-focused:transarent;
+  --highlight-height:0;
+  --highlight-color-invalid:#000;
+  --hightlight-color-valid:#ddd;
+  --min-height:65px;
+  --padding-start: 0;
+}
+[linespace]{
+  height: 30px;
+}
+ion-label{
+  color:#000;
+  opacity: .8;
+  font-size: 13px;
+  display: block;
+}
+.forget-password{
+  color:#000;
+  font-size:13px;
+  display: block;
+  text-align: right;
+  padding: 10px;
+}
+
+

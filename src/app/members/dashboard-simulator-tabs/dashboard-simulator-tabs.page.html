@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Dosya Seçimi </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="mountAlign">
+
+    <ion-label small-heading>
+        Öğretim Üyesinin Öğrenci verilerini alabilmesi için Kocaeli Üniversitesinin standardı olan parametrelere sahip CSV dosyası girilmelidir.<br><br>
+    </ion-label>
+    <ion-button fill="outline" expand="block" color="warning" (click)="fileChoose()">
+      DOSYA SEÇİNİZ
+    </ion-button>
+    <ion-label small-heading>
+      <br><br>Seçilen Dosya Yolu: {{myPath}}<br><br>
+    </ion-label>
+    <table scrollX="true" border="1" class="data-table">
+      <tr>
+        <td text-center><b>{{ headerRow[0] }}</b></td>
+        <td text-center><b>{{ headerRow[3] }}</b></td>
+        <td text-center><b>{{ headerRow[4] }}</b></td>
+      </tr>
+      <tr *ngFor="let row of csvData; let i = index">
+        <td>
+          <ion-input type="text" [(ngModel)]="csvData[i][0]"></ion-input>
+        </td>
+        <td>
+          <ion-input type="text" [(ngModel)]="csvData[i][3]"></ion-input>
+        </td>
+        <td>
+          <ion-input type="text" [(ngModel)]="csvData[i][4]"></ion-input>
+        </td>
+      </tr>
+    </table>
+  </div>
+</ion-content>

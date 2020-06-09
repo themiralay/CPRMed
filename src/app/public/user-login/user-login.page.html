@@ -1,0 +1,37 @@
+<ion-header no-border>
+    <div class="login-header ion-padding">
+      <img class="logo.img" src="assets/img/cprFoto.png">
+    </div>
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <div heading-column-lr>
+      <h1 big-heading>GİRİŞ</h1>
+      <h2 small-heading>KULLANICI GİRİŞİ</h2>
+    </div>
+      <br>
+      <ion-label >
+          CPR Ölçüm Cihazı erişimi için kullanıcı arayüzü.
+      </ion-label>
+      <ion-item transparent>
+          <img icon-small src="assets/img/user.png"/>
+          <ion-input [(ngModel)]="Email" placeholder="E-MAIL ADRESI" type="text"></ion-input>
+      </ion-item>
+      <ion-item transparent>
+          <img icon-small src="../../../assets/img/password.png"/>
+          <ion-input [(ngModel)]="Password" placeholder="SIFRENIZ" type="password"></ion-input>
+      </ion-item>
+      <ion-label class="forget-password">Şifremi Unuttum!</ion-label>
+      <div linespace></div>
+      <ion-button color="danger" class="ion-button-class" shape="round" fill="solid" size="large" expand="block" (click)="LoginOTP">
+          GİRİŞ
+      </ion-button>
+      <ion-label class="ion-text-center">
+          Hesabınız yok mu?
+          <span class="link-button" (click)="Register()">
+              KAYIT OL
+          </span>
+      </ion-label>
+  </div>
+</ion-content>

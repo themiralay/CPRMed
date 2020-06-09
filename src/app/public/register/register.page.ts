@@ -26,13 +26,16 @@ export class RegisterPage implements OnInit {
     }
   ngOnInit() {
   }
+  routeLogin(){
+    this.router.navigate(['login']);
+  }
   async register(){
     const{username,password,confirmPassword}=this
     if(password!==confirmPassword){
       this.presentToast("Şifreler uyuşmuyor tekrar kontrol ediniz.");
     }
     try {
-      const res = await this.afAuth.createUserWithEmailAndPassword(username+'@cprmed.com',password)
+      const res = await this.afAuth.createUserWithEmailAndPassword(username,password)
       this.router.navigate(['login']);
       this.presentToast("Kullanıcı Başarıyla Kayıt edildi");
     }catch(err){

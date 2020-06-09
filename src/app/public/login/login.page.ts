@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
@@ -27,12 +27,18 @@ export class LoginPage implements OnInit {
     }
   ngOnInit() {
   }
+  forgotPassword(){
+    this.router.navigate(['forgot-password']);
+  }
+  register(){
+    this.router.navigate(['register']);
+  }
   async login(){
     const{username,password}=this
     try{
-      const res = await this.afAuth.signInWithEmailAndPassword(username+'@cprmed.com',password)
+      const res = await this.afAuth.signInWithEmailAndPassword(username,password)
       if(res){
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['dashboard-tabs/dashboard-simulator-tabs']);
           this.presentToast("Kullanıcı Başarıyla Giriş Yaptı");
         } else {
           this.presentToast("Giriş yapılamadı")
@@ -44,5 +50,4 @@ export class LoginPage implements OnInit {
       }
     }
   }
-
 }

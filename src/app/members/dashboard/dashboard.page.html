@@ -19,18 +19,33 @@
  <ion-button fill="solid" expand="block" color="success" (click)="filechooser()" expand="full">dosya</ion-button>
   <ion-button fill="solid" expand="block" color="danger" (click)="simulationStop()">SIMULASYONU DURDUR</ion-button>
     {{mypath}}
-    {{ totalWeight }} = gram Basıyorsunuz. <BR>
-  
-  {{ highPressed }} = 50kg dan yüksek basıldı <BR>
+    <ion-select [compareWith]="compareWith" (ionChange)="onSelectChange($event)">
+      <ion-select-option  *ngFor="let row of csvData" value="{{row[0]}}">{{row[3]  + ' ' + row[4]}}</ion-select-option>
+    </ion-select>
+    <br><br>
+    Öğrencinin numarası = {{SelectedYearIdValue}}
+    Durum = {{institution}}
+    <br><br>
+    {{ weight }} = gram Basıyorsunuz. <BR> 
+    {{weightCounter}} Tane veri okundu <br>
+    {{ highPressed }} = 50kg dan yüksek basıldı <BR>
     {{ lowPressed}} = 30 kg dan düşük basıldı <BR>
     {{ truePressed }} = DOĞRU BASILDI <BR>
-      <table border="1" class="data-table">
+      <table scrollX="true" border="1" class="data-table">
         <tr>
-          <td *ngFor="let header of headerRow" text-center><b>{{ header }}</b></td>
+          <td text-center><b>{{ headerRow[0] }}</b></td>
+          <td text-center><b>{{ headerRow[3] }}</b></td>
+          <td text-center><b>{{ headerRow[4] }}</b></td>
         </tr>
         <tr *ngFor="let row of csvData; let i = index">
-          <td *ngFor="let data of row; let j = index; trackBy: trackByFn" class="data-col ">
-            <ion-input type="text" [(ngModel)]="csvData[i][j]"></ion-input>
+          <td>
+            <ion-input type="text" [(ngModel)]="csvData[i][0]"></ion-input>
+          </td>
+          <td>
+            <ion-input type="text" [(ngModel)]="csvData[i][3]"></ion-input>
+          </td>
+          <td>
+            <ion-input type="text" [(ngModel)]="csvData[i][4]"></ion-input>
           </td>
         </tr>
       </table>
